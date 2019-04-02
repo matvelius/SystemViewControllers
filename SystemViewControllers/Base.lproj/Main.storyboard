@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,46 +15,76 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SystemViewControllers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cyh-TH-14J" userLabel="Main Stack">
-                                <rect key="frame" x="10" y="30" width="355" height="627"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cyh-TH-14J" userLabel="Main Stack">
+                                <rect key="frame" x="10" y="30" width="300" height="528"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mIe-0f-QaL">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="589"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anita-austvika-1482624-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="mIe-0f-QaL">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="493.5"/>
                                     </imageView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ac0-4H-LoQ">
-                                        <rect key="frame" x="0.0" y="599" width="355" height="29"/>
-                                        <segments>
-                                            <segment title="Share"/>
-                                            <segment title="Safari"/>
-                                            <segment title="Camera"/>
-                                            <segment title="Email"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="optionTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="Gmz-Rp-JGh"/>
-                                        </connections>
-                                    </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="o5Q-WY-dWJ" userLabel="Buttons Stack">
+                                        <rect key="frame" x="0.0" y="503.5" width="300" height="24.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbQ-PV-h51">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="24.5"/>
+                                                <state key="normal" title="Share"/>
+                                                <connections>
+                                                    <action selector="shareButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fwT-RZ-bAB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emj-1k-snt">
+                                                <rect key="frame" x="75" y="0.0" width="75" height="24.5"/>
+                                                <state key="normal" title="Safari"/>
+                                                <connections>
+                                                    <action selector="safariButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o0C-EW-Wb4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBW-Uq-xan">
+                                                <rect key="frame" x="150" y="0.0" width="75" height="24.5"/>
+                                                <state key="normal" title="Camera"/>
+                                                <connections>
+                                                    <action selector="photosButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="51p-Qw-lYR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEv-8F-RbB">
+                                                <rect key="frame" x="225" y="0.0" width="75" height="24.5"/>
+                                                <state key="normal" title="Email"/>
+                                                <connections>
+                                                    <action selector="emailButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MO9-rr-Fli"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="o5Q-WY-dWJ" firstAttribute="height" secondItem="mIe-0f-QaL" secondAttribute="height" multiplier="1:20" id="9HB-By-uhn"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cyh-TH-14J" secondAttribute="trailing" constant="10" id="FEW-65-4UR"/>
                             <constraint firstItem="Cyh-TH-14J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Gt0-LL-blQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cyh-TH-14J" secondAttribute="trailing" constant="10" id="P6o-C4-gDD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cyh-TH-14J" secondAttribute="bottom" constant="10" id="YMU-zb-bmd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cyh-TH-14J" secondAttribute="bottom" constant="10" id="abc-R9-erX"/>
+                            <constraint firstItem="Cyh-TH-14J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="lPW-Ug-D9L"/>
                             <constraint firstItem="Cyh-TH-14J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="omg-cw-nHO"/>
+                            <constraint firstItem="Cyh-TH-14J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="pRq-Vn-Osx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="mIe-0f-QaL" id="cjE-NU-IBg"/>
-                        <outlet property="segmentedControl" destination="ac0-4H-LoQ" id="9Gf-eg-Udc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="anita-austvika-1482624-unsplash" width="4672" height="7000"/>
+    </resources>
 </document>
